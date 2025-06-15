@@ -13,7 +13,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors(""));
+app.use(cors({origin:"https://ai-powered-geriatric-care.vercel.app"}));
 
 app.use("/api/v1/patient", PatientRoute);
 app.use("/api/v1/dr", DoctorRouter);
