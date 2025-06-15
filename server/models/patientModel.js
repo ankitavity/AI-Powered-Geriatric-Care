@@ -13,6 +13,23 @@ const PatientSchema=new mongoose.Schema({
         type:String,
         required: [true, 'Patient Name is required']
     },
+    dob: {
+        type: Date,
+        required: [true, 'Patient DOB is required']
+    },
+    gender: {
+        type: String,
+        enum: ["male", "female"],
+        required: [true, 'Patient gender is required']
+    },
+    diabetic: {
+        type: Boolean,
+        default: false
+    },
+    hypertension: {
+        type: Boolean,
+        default: false
+    },
     address:{
         type:String,
         required: [true, 'Patient Address  is required for emergency']
