@@ -23,7 +23,7 @@ const RegisterPatient = () => {
       setLoading(true);
       console.log(inputs);
       const resp = await axios.post(
-        "http://192.168.88.150:7000/api/v1/patient/register",
+        "https://ai-powered-geriatric-care.onrender.com/api/v1/patient/register",
         inputs
       );
 

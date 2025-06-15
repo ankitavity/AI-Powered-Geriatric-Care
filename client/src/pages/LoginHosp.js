@@ -15,7 +15,7 @@ const LoginHosp = () => {
   const submitHandler = async (val) => {
     try {
       const resp = await axios.post(
-        "http://192.168.88.150:7000/api/v1/hosp/login",
+        "https://ai-powered-geriatric-care.onrender.com/api/v1/hosp/login",
         val
       );
       if (resp.data.success) {

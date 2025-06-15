@@ -11,7 +11,7 @@ const LoginPatient = () => {
   const submitHandler = async (inputs) => {
     try {
       const resp = await axios.post(
-        "http://192.168.88.150:7000/api/v1/patient/login",
+        "https://ai-powered-geriatric-care.onrender.com/api/v1/patient/login",
         inputs
       );
       if (resp.data.success) {

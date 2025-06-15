@@ -55,7 +55,7 @@ const PatientDetails = () => {
 
   const getPatDetails = async () => {
     const resp = await axios.post(
-      "http://192.168.88.150:7000/api/v1/patient/patdetails",
+      "https://ai-powered-geriatric-care.onrender.com/api/v1/patient/patdetails",
       { id }
     );
     setData(resp.data.data);
@@ -67,7 +67,7 @@ const PatientDetails = () => {
 
   const sendEmail = async (subject, text) => {
     const resp = await axios.post(
-      "http://192.168.88.150:7000/api/v1/patient/sendEmail",
+      "https://ai-powered-geriatric-care.onrender.com/api/v1/patient/sendEmail",
       {
         email: data.email,
         subject: subject,
@@ -101,7 +101,7 @@ const PatientDetails = () => {
   const handleMedicineRemove = async (record) => {
     try {
       const res = await axios.post(
-        "http://192.168.88.150:7000/api/v1/prescribe/delete",
+        "https://ai-powered-geriatric-care.onrender.com/api/v1/prescribe/delete",
         {
           prescriptionId: record._id,
         }
@@ -172,7 +172,7 @@ const PatientDetails = () => {
   const submitPrescriptionHandler = async (val) => {
     console.log(val);
     const resp = await axios.post(
-      "http://192.168.88.150:7000/api/v1/prescribe/add",
+      "https://ai-powered-geriatric-care.onrender.com/api/v1/prescribe/add",
       {
         ...val,
         patientEmail: data.email,
@@ -191,7 +191,7 @@ const PatientDetails = () => {
 
   const submitScheduleTestHandler = async (val) => {
     const resp = await axios.post(
-      "http://192.168.88.150:7000/api/v1/schedule/update",
+      "https://ai-powered-geriatric-care.onrender.com/api/v1/schedule/update",
       {
         ...val,
         patientEmail: data.email,

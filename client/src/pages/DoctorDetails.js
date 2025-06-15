@@ -35,7 +35,7 @@ const DoctorDetails = () => {
     try {
       setLoading(true);
       const resp = await axios.post(
-        "http://192.168.88.150:7000/api/v1/dr/get_pat_details",
+        "https://ai-powered-geriatric-care.onrender.com/api/v1/dr/get_pat_details",
         { email: doctor.email }
       );
       setPat(resp.data.data);
