@@ -29,9 +29,9 @@ app.get("/", (req, res) => {
 const startServer = async () => {
   try {
     await connectDB(process.env.MONGODB_URL);
-    const PORT = 7000;
+    const PORT = process.env.PORT || 8080;
     const HOST = "192.168.1.15";
-    app.listen(() => {
+    app.listen(PORT, () => {
       console.log(`Server is running on PORT ${PORT}`);
     });
   } catch (error) {
