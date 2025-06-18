@@ -21,7 +21,7 @@ const AppointmentForm = () => {
     const { name, date, time, category, message } = form;
     const text = `New Appointment Request:%0APatient: ${encodeURIComponent(name)}%0ADate: ${encodeURIComponent(date)}%0ATime: ${encodeURIComponent(time)}%0ACategory: ${encodeURIComponent(category)}%0AMessage: ${encodeURIComponent(message)}`;
 
-    const apiUrl = `https://signal.callmebot.com/signal/send.php?phone=6f69ad54-55ba-46b8-af08-d68a0026e809&apikey=753348&text=${text}`;
+    const apiUrl = `https://signal.callmebot.com/signal/send.php?phone=01577c0b-5d89-46b4-8830-0b0f28d3f3d9&apikey=725492&text=${text}`;
 
     try {
       const res = await axios.get(apiUrl);
