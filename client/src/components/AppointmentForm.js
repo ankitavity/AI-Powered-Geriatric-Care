@@ -39,12 +39,30 @@ const AppointmentForm = () => {
   return (
     <div className="max-w-md mx-auto bg-white p-6 shadow rounded">
       <h2 className="text-xl font-bold mb-4 text-center">Schedule Appointment</h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="grid grid-col-2 gap-2">
         <input
           type="text"
           name="name"
           placeholder="Patient Name"
           value={form.name}
+          onChange={handleChange}
+          required
+          className="w-full border rounded px-3 py-2"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Email"
+          value={form.email}
+          onChange={handleChange}
+          required
+          className="w-full border rounded px-3 py-2"
+        />
+        <input
+          type="text"
+          name="mobile"
+          placeholder="Mobile Number"
+          value={form.mobile}
           onChange={handleChange}
           required
           className="w-full border rounded px-3 py-2"
@@ -88,7 +106,7 @@ const AppointmentForm = () => {
           placeholder="Additional Message"
           value={form.message}
           onChange={handleChange}
-          className="w-full border rounded px-3 py-2"
+          className="w-full border rounded px-3 py-2 col-span-2"
           rows="3"
         ></textarea>
         <button
