@@ -7,6 +7,7 @@ import {
   FileTextOutlined,
   HomeOutlined,
 } from "@ant-design/icons";
+import AppointmentForm from "../components/AppointmentForm";
 
 const Home = () => {
   return (
@@ -112,7 +113,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-
+      <AppointmentForm/>
       {/* Services Section with Enhanced Cards */}
       <Container className="benefits-section mb-5">
         <h2 className="text-center mb-4 section-title gradient-text">
