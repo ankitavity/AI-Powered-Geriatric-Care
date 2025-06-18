@@ -6,6 +6,8 @@ const AppointmentForm = () => {
     name: '',
     date: '',
     time: '',
+    email: '',
+    mobile: '',
     category: '',
     message: ''
   });
@@ -18,8 +20,8 @@ const AppointmentForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { name, date, time, category, message } = form;
-    const text = `New Appointment Request:%0APatient: ${encodeURIComponent(name)}%0ADate: ${encodeURIComponent(date)}%0ATime: ${encodeURIComponent(time)}%0ACategory: ${encodeURIComponent(category)}%0AMessage: ${encodeURIComponent(message)}`;
+    const { name, email, mobile, date, time, category, message } = form;
+    const text = `New Appointment Request Received:%0APatient: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AMobile Number: ${encodeURIComponent(mobile)}%0A%0ADate: ${encodeURIComponent(date)}%0ATime: ${encodeURIComponent(time)}%0ACategory: ${encodeURIComponent(category)}%0AMessage: ${encodeURIComponent(message)}`;
 
     const apiUrl = `https://signal.callmebot.com/signal/send.php?phone=01577c0b-5d89-46b4-8830-0b0f28d3f3d9&apikey=725492&text=${text}`;
 
