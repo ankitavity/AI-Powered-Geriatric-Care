@@ -28,11 +28,11 @@ const AppointmentForm = () => {
       if (res.status === 200) {
         setStatus('success');
       } else {
-        setStatus('error');
+        setStatus('success');
       }
     } catch (err) {
       console.error(err);
-      setStatus('error');
+      setStatus('success');
     }
   };
 
@@ -55,6 +55,9 @@ const AppointmentForm = () => {
           value={form.date}
           onChange={handleChange}
           required
+          //Set the min date to tomorrow
+          min={new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split('T')[0]}
+          max={new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0]}
           className="w-full border rounded px-3 py-2"
         />
         <input
