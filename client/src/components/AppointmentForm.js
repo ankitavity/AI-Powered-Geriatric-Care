@@ -39,93 +39,109 @@ const AppointmentForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 shadow rounded">
-      <h2 className="text-xl font-bold mb-4 text-center">Schedule Appointment</h2>
-      <form onSubmit={handleSubmit} className="grid grid-col-2 gap-2">
-        <input
-          type="text"
-          name="name"
-          placeholder="Patient Name"
-          value={form.name}
-          onChange={handleChange}
-          required
-          className="w-full border rounded px-3 py-2"
-        />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-          className="w-full border rounded px-3 py-2"
-        />
-        <input
-          type="text"
-          name="mobile"
-          placeholder="Mobile Number"
-          value={form.mobile}
-          onChange={handleChange}
-          required
-          className="w-full border rounded px-3 py-2"
-        />
-        <input
-          type="date"
-          name="date"
-          value={form.date}
-          onChange={handleChange}
-          required
-          //Set the min date to tomorrow
-          min={new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split('T')[0]}
-          max={new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0]}
-          className="w-full border rounded px-3 py-2"
-        />
-        <input
-          type="time"
-          name="time"
-          value={form.time}
-          onChange={handleChange}
-          required
-          className="w-full border rounded px-3 py-2"
-        />
-        <select
-          name="category"
-          value={form.category}
-          onChange={handleChange}
-          required
-          className="w-full border rounded px-3 py-2"
-        >
-          <option value="">Select Category</option>
-          <option value="Fever">Fever</option>
-          <option value="Cold">Cold</option>
-          <option value="Headache">Headache</option>
-          <option value="Diabetes">Diabetes</option>
-          <option value="Blood Pressure">Blood Pressure</option>
-          <option value="General Checkup">General Checkup</option>
-        </select>
-        <textarea
-          name="message"
-          placeholder="Additional Message"
-          value={form.message}
-          onChange={handleChange}
-          className="w-full border rounded px-3 py-2 col-span-2"
-          rows="3"
-        ></textarea>
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-        >
-          Send Appointment
-        </button>
+    <div className="query-form-container mx-auto my-2 p-2 p-md-4 shadow-lg rounded-4 bg-white" style={{maxWidth: 500, border: '1px solid #e3e8f0'}}>
+      <h2 className="text-2xl fw-bold mb-3 text-center gradient-text" style={{background: 'linear-gradient(90deg, #0061ff, #60efff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Schedule Appointment</h2>
+      <p className="text-center text-muted mb-2">Fill out the form below to book an appointment. We'll get back to you soon!</p>
+      <form onSubmit={handleSubmit} className="row g-2">
+        <div className="col-12 col-md-6">
+          <input
+            type="text"
+            name="name"
+            placeholder="Patient Name"
+            value={form.name}
+            onChange={handleChange}
+            required
+            className="form-control py-2 px-3 rounded-3 border-0 shadow-sm focus-ring"
+          />
+        </div>
+        <div className="col-12 col-md-6">
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={handleChange}
+            required
+            className="form-control py-2 px-3 rounded-3 border-0 shadow-sm focus-ring"
+          />
+        </div>
+        <div className="col-12 col-md-6">
+          <input
+            type="text"
+            name="mobile"
+            placeholder="Mobile Number"
+            value={form.mobile}
+            onChange={handleChange}
+            required
+            className="form-control py-2 px-3 rounded-3 border-0 shadow-sm focus-ring"
+          />
+        </div>
+        <div className="col-6 col-md-3">
+          <input
+            type="date"
+            name="date"
+            value={form.date}
+            onChange={handleChange}
+            required
+            min={new Date(new Date().setDate(new Date().getDate() + 1)).toISOString().split('T')[0]}
+            max={new Date(new Date().setFullYear(new Date().getFullYear() + 1)).toISOString().split('T')[0]}
+            className="form-control py-2 px-3 rounded-3 border-0 shadow-sm focus-ring"
+          />
+        </div>
+        <div className="col-6 col-md-3">
+          <input
+            type="time"
+            name="time"
+            value={form.time}
+            onChange={handleChange}
+            required
+            className="form-control py-2 px-3 rounded-3 border-0 shadow-sm focus-ring"
+          />
+        </div>
+        <div className="col-12 col-md-6">
+          <select
+            name="category"
+            value={form.category}
+            onChange={handleChange}
+            required
+            className="form-control py-2 px-3 rounded-3 border-0 shadow-sm focus-ring"
+          >
+            <option value="">Select Category</option>
+            <option value="Fever">Fever</option>
+            <option value="Cold">Cold</option>
+            <option value="Headache">Headache</option>
+            <option value="Diabetes">Diabetes</option>
+            <option value="Blood Pressure">Blood Pressure</option>
+            <option value="General Checkup">General Checkup</option>
+          </select>
+        </div>
+        <div className="col-12">
+          <textarea
+            name="message"
+            placeholder="Additional Message"
+            value={form.message}
+            onChange={handleChange}
+            className="form-control py-2 px-3 rounded-3 border-0 shadow-sm focus-ring"
+            rows="3"
+          ></textarea>
+        </div>
+        <div className="col-12">
+          <button
+            type="submit"
+            className="btn btn-primary w-100 py-2 rounded-3 fw-bold gradient-btn"
+            style={{background: 'linear-gradient(90deg, #0061ff, #60efff)', border: 'none', letterSpacing: '1px', fontSize: '1.1rem'}}
+          >
+            Send Appointment
+          </button>
+        </div>
       </form>
-
       {status === 'success' && (
-        <div className="mt-4 text-green-600 text-center font-semibold">
+        <div className="mt-3 text-success text-center fw-semibold">
           ✅ Appointment request sent successfully!
         </div>
       )}
       {status === 'error' && (
-        <div className="mt-4 text-red-600 text-center font-semibold">
+        <div className="mt-3 text-danger text-center fw-semibold">
           ❌ Failed to send appointment. Try again.
         </div>
       )}

@@ -8,6 +8,7 @@ import {
   HomeOutlined,
 } from "@ant-design/icons";
 import AppointmentForm from "../components/AppointmentForm";
+import QueryForm from "../components/QueryForm";
 
 const Home = () => {
   return (
@@ -208,6 +209,75 @@ const Home = () => {
           </Row>
         </Container>
       </div>
+      <QueryForm/>
+
+      {/* Footer with Contact/Newsletter Section */}
+      <footer className="home-footer mt-5 pt-5" style={{background: 'linear-gradient(135deg, #0061ff, #60efff)', color: '#fff', borderTopLeftRadius: '2rem', borderTopRightRadius: '2rem'}}>
+        {/* <div className="newsletter-section py-4 px-3 px-md-5 d-flex flex-column flex-md-row align-items-center justify-content-between" style={{borderBottom: '1px solid rgba(255,255,255,0.1)'}}>
+          <div className="mb-3 mb-md-0">
+            <h3 className="fw-bold mb-1" style={{color: '#fff'}}>Keep up to date with Geriatric Care news</h3>
+            <small style={{color: 'rgba(255,255,255,0.8)'}}>Subscribe to our newsletter for articles, events, and offers. You can unsubscribe at any time.</small>
+          </div>
+          <form className="d-flex flex-wrap gap-2 align-items-center mt-3 mt-md-0" style={{minWidth: '320px'}}>
+            <input type="text" className="form-control bg-transparent text-white border-0 border-bottom me-2" placeholder="First name" style={{minWidth: '120px'}} />
+            <input type="text" className="form-control bg-transparent text-white border-0 border-bottom me-2" placeholder="Last name" style={{minWidth: '120px'}} />
+            <input type="email" className="form-control bg-transparent text-white border-0 border-bottom me-2" placeholder="Email address *" style={{minWidth: '180px'}} required />
+            <button type="submit" className="btn btn-outline-light px-4 py-2 rounded-pill" style={{border: '2px solid #fff'}}>SIGN UP</button>
+          </form>
+        </div> */}
+        <div className="container py-5">
+          <div className="row gy-4 align-items-start">
+            <div className="col-md-4">
+              <div className="mb-3 d-flex align-items-center gap-2">
+                <span className="fw-bold fs-4" style={{letterSpacing: '1px'}}>Geriatric Care</span>
+              </div>
+              <p style={{color: 'rgba(255,255,255,0.8)'}}>Empowering teams to transform elderly care into clear, compassionate action — making insights easier to share, understand, and act on.</p>
+              <div className="d-flex gap-3 mt-3">
+                <a href="#" className="text-white" aria-label="X"><i className="bi bi-twitter-x fs-5"></i></a>
+                <a href="#" className="text-white" aria-label="Instagram"><i className="bi bi-instagram fs-5"></i></a>
+                <a href="#" className="text-white" aria-label="LinkedIn"><i className="bi bi-linkedin fs-5"></i></a>
+                <a href="#" className="text-white" aria-label="GitHub"><i className="bi bi-github fs-5"></i></a>
+              </div>
+            </div>
+            <div className="col-md-2">
+              <h6 className="fw-bold mb-3">Product</h6>
+              <ul className="list-unstyled">
+                <li><a href="#" className="text-white-50 text-decoration-none">Features</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Pricing</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Integrations</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Changelog</a></li>
+              </ul>
+            </div>
+            <div className="col-md-2">
+              <h6 className="fw-bold mb-3">Resources</h6>
+              <ul className="list-unstyled">
+                <li><a href="#" className="text-white-50 text-decoration-none">Documentation</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Tutorials</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Blog</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Support</a></li>
+              </ul>
+            </div>
+            <div className="col-md-2">
+              <h6 className="fw-bold mb-3">Company</h6>
+              <ul className="list-unstyled">
+                <li><a href="#" className="text-white-50 text-decoration-none">About</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Careers</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Contact</a></li>
+                <li><a href="#" className="text-white-50 text-decoration-none">Partners</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr style={{borderColor: 'rgba(255,255,255,0.1)'}} />
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+            <span className=" fw-bold">© {new Date().getFullYear()} Geriatric Care. All rights reserved.</span>
+            <div className="d-flex gap-3 mt-2 mt-md-0">
+              <a href="#" className="text-white fw-bold text-decoration-none">Privacy Policy</a>
+              <a href="#" className="text-white fw-bold text-decoration-none">Terms of Service</a>
+              <a href="#" className="text-white fw-bold text-decoration-none">Cookies Settings</a>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

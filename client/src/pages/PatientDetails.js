@@ -218,7 +218,7 @@ const PatientDetails = () => {
                   Patient Dashboard
                 </h1>
                 <p className="lead text-white mb-4 highlight-text">
-                  Hello{" "}
+                  Hello {""}
                   {redirectFrom === "guardian" && data
                     ? data.guardianName
                     : redirectFrom}
