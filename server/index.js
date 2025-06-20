@@ -8,6 +8,7 @@ const HospitalRoute = require("./routes/HospitalRoute");
 const LogRoute = require("./routes/LogRoute");
 const PrescripRouter = require("./routes/PrescriptionRoute");
 const ScheduleTestRouter = require("./routes/ScheduleTestRoute");
+const iotRouter = require("./routes/IOTRoute");
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use("/api/v1/hosp", HospitalRoute);
 app.use("/api/v1/log", LogRoute);
 app.use("/api/v1/prescribe", PrescripRouter);
 app.use("/api/v1/schedule", ScheduleTestRouter);
+app.use("/api/v1/iot", iotRouter);
 
 app.get("/", (req, res) => {
   res.send("Telemedicine Backend Is Live");
